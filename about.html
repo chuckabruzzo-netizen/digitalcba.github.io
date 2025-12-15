@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About CBA Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="site-header">
+    <div class="container header-inner">
+        <div class="logo-placeholder">
+        CBA Digital
+        </div>
+
+        <!-- Hamburger toggle -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+
+        <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="field-notes.html">Field Notes</a>
+        <a href="#contact">Contact</a>
+        </nav>
+    </div>
+    </header>
+
+
+
+  <main>
+    <section class="section about">
+      <div class="container">
+        <h1>About CBA Digital</h1>
+        <p>
+          CBA Digital is a one‑person fractional operations and digital practice
+          based in Oregon City, Oregon. The focus is on helping local businesses—
+          retail shops, trades, and service companies—run smoother and show up
+          better online.
+        </p>
+        <p>
+          With more than 15 years in business systems analysis, telecom and
+          dispatch operations, and hands‑on small‑business web work, CBA Digital
+          brings a practical, systems‑first approach: no jargon, no bloated slide
+          decks, just changes you can actually implement.
+        </p>
+        <p>
+          The work is grounded in simple tools, clear communication, and meeting
+          you where you are—whether that’s a paper calendar, a POS system, or a
+          mix of spreadsheets and sticky notes.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> CBA Digital • Oregon City, OR</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+  // year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('is-open');
+      mainNav.classList.toggle('is-open');
+    });
+  }
+</script>
+
+</body>
+</html>

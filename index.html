@@ -9,18 +9,27 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <!-- LOGO PLACEHOLDER -->
       <div class="logo-placeholder">
         CBA Digital
       </div>
 
+      <!-- Hamburger toggle -->
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <nav class="main-nav">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="field-notes.html">Field Notes</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
+
 
   <!-- HERO -->
   <section class="hero">
@@ -164,5 +173,21 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script>
+  // year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('is-open');
+      mainNav.classList.toggle('is-open');
+    });
+  }
+</script>
+
 </body>
 </html>
