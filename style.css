@@ -172,6 +172,14 @@ body {
   flex-wrap: wrap;
   gap: 0.75rem;
 }
+.post-hero img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 320px;      /* adjust to taste */
+  object-fit: cover;      /* crops instead of squishing */
+  border-radius: 6px;
+}
 
 /* Larger layout for hero on desktop */
 @media (min-width: 768px) {
