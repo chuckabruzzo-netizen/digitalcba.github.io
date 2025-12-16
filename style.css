@@ -172,6 +172,17 @@ body {
   flex-wrap: wrap;
   gap: 0.75rem;
 }
+.tagline-banner {
+  padding: 1.5rem 0;
+  background: #ffffff;
+}
+
+.tagline-banner img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
 
 /* Blog post hero image */
 .post-hero {
