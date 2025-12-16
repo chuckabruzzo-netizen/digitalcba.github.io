@@ -325,3 +325,8 @@ body {
 }
 
 .about p {
+  max-width: 40rem;
+  margin: 0 0 1rem;
+  color: var(--text-main);
+}
+
