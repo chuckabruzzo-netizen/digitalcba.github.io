@@ -65,8 +65,24 @@
     </main>
 
     <footer class="site-footer">
-      <p>CBA Digital • <a href="http://www.digitalcba.com">www.digitalcba.com</a> • <a href="mailto:chuck@digitalcba.com">chuck@digitalcba.com</a></p>
+        <div class="container">
+            <p>&copy; <span id="year"></span> CBA Digital, Oregon City, OR</p>
+        </div>
     </footer>
   </div>
+    <script>
+        // Year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile nav toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        if (navToggle && mainNav) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('is-open');
+                mainNav.classList.toggle('is-open');
+            });
+        }
+    </script>
 </body>
 </html>
