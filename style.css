@@ -172,12 +172,18 @@ body {
   flex-wrap: wrap;
   gap: 0.75rem;
 }
+
+/* Blog post hero image */
+.post-hero {
+  margin: 1.5rem 0;
+}
+
 .post-hero img {
   display: block;
   max-width: 100%;
   height: auto;
-  max-height: 320px;      /* adjust to taste */
-  object-fit: cover;      /* crops instead of squishing */
+  max-height: 320px; /* adjust to taste */
+  object-fit: cover; /* crops instead of squishing */
   border-radius: 6px;
 }
 
@@ -271,8 +277,34 @@ body {
 }
 
 /* =========================
+   Field Notes & Blog
+   ========================= */
+
+/* Listing page cards */
+.field-notes-list p {
+  margin: 0 0 0.75rem;
+}
+
+/* Single Field Note post */
+.field-note {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.field-note p {
+  margin: 0 0 1rem;
+}
+
+/* =========================
    About
    ========================= */
+
+.about p {
+  max-width: 40rem;
+  margin: 0 0 1rem;
+  color: var(--text-main);
+}
+
 /* =========================
    Responsive nav / hamburger
    ========================= */
@@ -325,16 +357,11 @@ body {
 .nav-toggle.is-open span:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
+
 .nav-toggle.is-open span:nth-child(2) {
   opacity: 0;
 }
+
 .nav-toggle.is-open span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
-
-.about p {
-  max-width: 40rem;
-  margin: 0 0 1rem;
-  color: var(--text-main);
-}
-
