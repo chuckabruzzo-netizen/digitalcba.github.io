@@ -181,6 +181,11 @@ header {
   border-bottom: 1px solid var(--color-border);
   z-index: 50;
 }
+.brand-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
 
 .nav {
   display: flex;
