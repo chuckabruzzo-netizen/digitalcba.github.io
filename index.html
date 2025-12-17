@@ -10,107 +10,81 @@
 </head>
 
 <body>
-  <a class="sr-only" href="#main">Skip to content</a>
+  <a href="#main" class="skip-link">Skip to content</a>
+
 
   <!-- Header: global nav + primary CTA -->
   <header>
-    <div class="container">
-      <div class="nav" aria-label="Primary">
-        <a class="brand" href="/" aria-label="CBA Digital home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-name">
-            <strong>CBA Digital</strong>
-            <span>Smarter operations + digital visibility</span>
-          </span>
-        </a>
+    <div class="container nav">
+      <a class="brand" href="/">
+        <span class="brand-mark"></span>
+        <strong>CBA Digital</strong>
+      </a>
 
-        <nav aria-label="Site">
-          <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#how-it-works">How it works</a></li>
-            <li><a href="#proof">Proof</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#proof">Proof</a></li>
+        </ul>
+      </nav>
 
-        <div class="nav-actions">
-          <a class="btn btn--ghost" href="mailto:chuck@digitalcba.com">Email</a>
-          <a class="btn btn--primary" href="/service/">Business Snapshot</a>
-        </div>
-      </div>
+      <a class="btn btn--primary" href="/service/">Business Snapshot</a>
     </div>
   </header>
 
+
   <main id="main">
     <!-- Hero: one clear promise + direct path to the service page -->
-    <section class="section section--tight">
-      <div class="container hero">
-        <div class="hero-content">
-          <p class="eyebrow">Local-first • Practical • No fluff</p>
+    <section class="hero">
+      <div class="container">
+        <h1>Smarter operations and digital visibility for small local service businesses.</h1>
+        <p class="lead">
+          Reduce chaos, improve execution, and get found online—through practical changes that stick.
+        </p>
 
-          <h1>Smarter operations and digital visibility for small local service businesses.</h1>
-
-          <p class="lead">
-            Reduce chaos, improve execution, and get found online—through straightforward changes that actually stick.
-          </p>
-
-          <div class="actions">
-            <a class="btn btn--primary" href="/service/">View the Business Snapshot</a>
-            <a class="btn btn--secondary" href="#services">Explore services</a>
-          </div>
-
-          <p class="small muted">
-            Based in Oregon City • Working with local businesses across the Portland metro and beyond
-          </p>
-        </div>
-
-        <!-- Light sidebar: point to the service page instead of duplicating its content -->
-        <aside class="card card--soft hero-aside" aria-label="Start here">
-          <h3>Start here: Business Snapshot</h3>
-          <p class="small">
-            A fast, focused assessment to identify what to fix first—operations + digital visibility.
-          </p>
-          <div class="actions actions--tight">
-            <a class="btn btn--primary" href="/service/">See details</a>
-            <a class="btn" href="mailto:chuck@digitalcba.com?subject=Business%20Snapshot%20Request&body=Hi%20Chuck%2C%0A%0AI%E2%80%99d%20like%20to%20request%20a%20Business%20Snapshot.%0A%0ABusiness%20name%3A%0AType%20of%20service%3A%0ATeam%20size%3A%0AWhat%E2%80%99s%20hard%20right%20now%3A%0A%0AThanks%2C">
-              Request via email
-            </a>
-          </div>
-        </aside>
+        <a class="btn btn--primary" href="/service/">
+          View the Business Snapshot
+        </a>
       </div>
     </section>
+
 
     <!-- Services: overview only (avoid repeating the service page) -->
-    <section id="services" class="section">
+    <section id="services">
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Services</span>
-          <h2>Clear options. Practical outcomes.</h2>
-          <p class="lead">Start small, fix what matters, and build stronger systems over time.</p>
-        </div>
+        <h2>Services</h2>
 
         <div class="grid cols-3">
-          <article class="card">
+          <div class="card">
             <h3>Business Snapshot &amp; Clarity Audit</h3>
-            <p>Structured assessment + clear priorities. Best first step before investing further.</p>
-            <p class="mt-4">
-              <a class="link" href="/service/">View details →</a>
-            </p>
-          </article>
+            <p>Structured assessment to identify what to fix first.</p>
+            <a href="/service/" class="link">View details →</a>
+          </div>
 
-          <article class="card">
+          <div class="card">
             <h3>Business Tune-Up</h3>
-            <p>Time-boxed improvements to workflows, tools, and visibility—focused on reducing friction.</p>
-          </article>
+            <p>Hands-on improvements to workflows and visibility.</p>
+          </div>
 
-          <article class="card">
+          <div class="card">
             <h3>Ongoing Support</h3>
-            <p>Lightweight monthly support to keep systems aligned and decisions grounded in simple metrics.</p>
-          </article>
+            <p>Lightweight monthly support to keep systems aligned.</p>
+          </div>
         </div>
       </div>
     </section>
+    <section class="cta">
+      <div class="container">
+        <h2>Start with clarity.</h2>
+        <p class="lead">
+          If your business feels harder to run than it should, start with the Snapshot.
+        </p>
+        <a class="btn btn--primary" href="/service/">See what’s included</a>
+      </div>
+    </section>
 
+    
     <!-- How it works: keep the concept, keep it high-level -->
     <section id="how-it-works" class="section">
       <div class="container">
@@ -140,7 +114,7 @@
         </div>
       </div>
     </section>
-
+    
     <!-- Proof: keep placeholders, keep short -->
     <section id="proof" class="section">
       <div class="container">
@@ -170,24 +144,16 @@
     </section>
 
     <!-- CTA: single CTA (don’t restate service deliverables here) -->
-    <section class="section cta" aria-label="Call to action">
-      <div class="container cta-inner">
-        <div>
-          <h2>Start with the Business Snapshot.</h2>
-          <p class="lead">If your business feels harder to run than it should, this is the fastest way to set clear priorities.</p>
-          <div class="actions">
-            <a class="btn btn--primary" href="/service/">See what’s included</a>
-            <a class="btn" href="mailto:chuck@digitalcba.com">Email Chuck</a>
-          </div>
-        </div>
-
-        <aside class="card card--soft">
-          <h3>Prefer to email?</h3>
-          <p class="small">Include business name, team size, and what’s hard right now.</p>
-          <p class="mt-4"><a class="link" href="mailto:chuck@digitalcba.com">chuck@digitalcba.com →</a></p>
-        </aside>
+    <section class="cta">
+      <div class="container">
+        <h2>Start with clarity.</h2>
+        <p class="lead">
+          If your business feels harder to run than it should, start with the Snapshot.
+        </p>
+        <a class="btn btn--primary" href="/service/">See what’s included</a>
       </div>
     </section>
+
 
     <!-- Footer -->
     <footer id="contact">

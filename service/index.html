@@ -10,27 +10,29 @@
 </head>
 
 <body>
-  <a class="sr-only" href="#main">Skip to content</a>
+  <a href="#main" class="skip-link">Skip to content</a>
+
 
   <!-- Header: consistent navigation -->
   <header>
-    <div class="container">
-      <div class="nav" aria-label="Primary">
-        <a class="brand" href="/" aria-label="CBA Digital home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-name">
-            <strong>CBA Digital</strong>
-            <span>Smarter operations + digital visibility</span>
-          </span>
-        </a>
+    <div class="container nav">
+      <a class="brand" href="/">
+        <span class="brand-mark"></span>
+        <strong>CBA Digital</strong>
+      </a>
 
-        <div class="nav-actions">
-          <a class="btn btn--ghost" href="/">Home</a>
-          <a class="btn btn--primary" href="#cta">Request a Snapshot</a>
-        </div>
-      </div>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#proof">Proof</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--primary" href="/service/">Business Snapshot</a>
     </div>
   </header>
+
 
   <main id="main">
     <!-- Hero: full service promise lives here (single source of truth) -->
