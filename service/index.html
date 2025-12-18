@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Business Snapshot & Clarity Audit — a fast, focused assessment that turns operational and digital noise into clear priorities and an actionable plan." />
+  <meta
+    name="description"
+    content="Business Snapshot & Clarity Audit — a focused assessment that turns operational and digital noise into clear priorities and an actionable 30–60 day plan."
+  />
   <title>Business Snapshot &amp; Clarity Audit | CBA Digital</title>
 
   <link rel="stylesheet" href="/style.css" />
@@ -12,11 +15,10 @@
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
-
-  <!-- Header: consistent navigation -->
-  <header>
+  <!-- Header (consistent with home) -->
+  <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="/">
+      <a class="brand" href="/" aria-label="CBA Digital home">
         <img
           src="/assets/primary-logo.png"
           alt="CBA Digital"
@@ -24,78 +26,81 @@
         />
       </a>
 
-
       <nav aria-label="Main navigation">
         <ul class="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#how-it-works">How it works</a></li>
-          <li><a href="#proof">Proof</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#how-it-works">How it works</a></li>
         </ul>
       </nav>
 
-      <a class="btn btn--primary" href="/service/">Business Snapshot</a>
+      <a class="btn btn--primary" href="#contact">Request a Snapshot</a>
     </div>
   </header>
 
-
   <main id="main">
-    <!-- Hero: full service promise lives here (single source of truth) -->
-    <section class="section section--tight">
-      <div class="container hero">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
         <div class="hero-content">
           <p class="eyebrow">Business Snapshot &amp; Clarity Audit</p>
 
           <h1>Know what to fix first.</h1>
 
           <p class="lead">
-            A structured assessment that turns operational and digital noise into clear priorities—so you can act with confidence.
+            A focused assessment that turns operational and digital noise into clear priorities—so you can stop guessing and move forward with confidence.
           </p>
 
           <div class="actions">
-            <a class="btn btn--primary" href="#cta">Request a Snapshot</a>
-            <a class="btn btn--secondary" href="#deliverables">See deliverables</a>
+            <a class="btn btn--primary" href="#contact">Request a Snapshot</a>
+            <a class="btn" href="#deliverables">See deliverables</a>
           </div>
 
-          <p class="small muted">
-            Best for owner-led service businesses that feel busy but inconsistent—and want clarity before committing to bigger changes.
+          <p class="small muted mt-1">
+            Best for owner-led local service businesses that feel busy but inconsistent—and want clarity before committing to bigger changes.
           </p>
         </div>
 
         <aside class="card card--soft">
-          <h3>In one engagement, you get:</h3>
-          <ul class="mt-4">
-            <li>Clear view of how work really flows (and where it breaks)</li>
-            <li>Top 3 priorities for the next 30–60 days</li>
-            <li>Simple KPIs to track progress</li>
-            <li>Optional next step if you want implementation help</li>
+          <h2 class="panel-title">In one engagement, you get:</h2>
+          <ul class="list">
+            <li>A clear view of how work really flows (and where it breaks)</li>
+            <li>Your top 3 priorities for the next 30–60 days</li>
+            <li>Simple KPIs to track progress without bureaucracy</li>
+            <li>An optional next step if you want implementation help</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <!-- Problem → Solution → Outcome (tightened so it doesn’t feel like homepage repeats) -->
+    <!-- Problem / Solution / Outcome -->
     <section class="section">
       <div class="container">
         <div class="grid cols-3">
           <article class="card">
             <h3>Problem</h3>
-            <p class="mt-4">Execution feels harder than it should. Handoffs break, the owner gets pulled in, and visibility is inconsistent.</p>
+            <p class="mt-1">
+              Work “moves,” but follow-through isn’t reliable. Handoffs break, the owner gets pulled back in, and visibility is inconsistent.
+            </p>
           </article>
 
           <article class="card">
             <h3>Solution</h3>
-            <p class="mt-4">We map reality, find root causes, and rank fixes by impact—so you stop guessing.</p>
+            <p class="mt-1">
+              We map what’s real, find the breaks, and rank fixes by impact—so you know what matters now and what can wait.
+            </p>
           </article>
 
           <article class="card">
             <h3>Outcome</h3>
-            <p class="mt-4">Clear priorities, cleaner handoffs, fewer fires, and a plan your team can execute.</p>
+            <p class="mt-1">
+              Clear priorities, cleaner handoffs, fewer fires, and a practical plan your team can execute.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Deliverables: detailed “what you buy” stays here (not on homepage) -->
+    <!-- Deliverables -->
     <section id="deliverables" class="section">
       <div class="container">
         <div class="section-head">
@@ -105,68 +110,72 @@
         </div>
 
         <div class="grid cols-2">
-          <div class="card">
+          <article class="card">
             <h3>Before</h3>
-            <ul class="mt-4">
+            <ul class="list">
               <li>Short intake questionnaire</li>
-              <li>Review of website + local presence basics</li>
-              <li>High-level view of tools and workflows</li>
+              <li>Quick review of your website + local presence basics</li>
+              <li>High-level view of your tools and workflows</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="card">
+          <article class="card">
             <h3>During</h3>
-            <ul class="mt-4">
+            <ul class="list">
               <li>60–90 minute working session</li>
               <li>Map how work enters, moves, and completes</li>
               <li>Identify bottlenecks, handoffs, and visibility gaps</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="card">
+          <article class="card">
             <h3>After</h3>
-            <ul class="mt-4">
+            <ul class="list">
               <li>Written summary of findings</li>
               <li>Top 3–5 priorities ranked by impact</li>
               <li>30–60 day action plan (phased, realistic)</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="card">
+          <article class="card">
             <h3>Optional next step</h3>
-            <ul class="mt-4">
+            <ul class="list">
               <li>Time-boxed Tune-Up scope if you want implementation help</li>
               <li>No obligation—Snapshot stands on its own</li>
             </ul>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- CTA: same functionality (mailto) -->
-    <section id="cta" class="section cta">
+    <!-- CTA -->
+    <section id="contact" class="cta">
       <div class="container cta-inner">
         <div>
           <h2>Request a Business Snapshot</h2>
-          <p class="lead">Email is fine to start. I’ll reply with next steps and a short intake.</p>
+          <p class="lead">
+            Email is fine to start. I’ll reply with next steps and a short intake so we can schedule the working session.
+          </p>
 
           <div class="actions">
-            <a class="btn btn--primary"
-              href="mailto:chuck@digitalcba.com?subject=Business%20Snapshot%20Request&body=Hi%20Chuck%2C%0A%0AI%E2%80%99d%20like%20to%20request%20a%20Business%20Snapshot.%0A%0ABusiness%20name%3A%0AType%20of%20service%3A%0ATeam%20size%3A%0AWhat%E2%80%99s%20hard%20right%20now%3A%0A%0AThanks%2C">
+            <a
+              class="btn btn--primary"
+              href="mailto:chuck@digitalcba.com?subject=Business%20Snapshot%20Request&body=Hi%20Chuck%2C%0A%0AI%E2%80%99d%20like%20to%20request%20a%20Business%20Snapshot.%0A%0ABusiness%20name%3A%0AType%20of%20service%3A%0ATeam%20size%3A%0AWhat%E2%80%99s%20hard%20right%20now%3A%0A%0AThanks%2C"
+            >
               Email to request
             </a>
             <a class="btn" href="/">Back to home</a>
           </div>
 
-          <p class="small muted mt-4">
+          <p class="small muted mt-1">
             Include your business name, team size, and what’s hard right now.
           </p>
         </div>
 
         <aside class="card card--soft">
           <h3>Good fit if you:</h3>
-          <ul class="mt-4">
-            <li>Run a local service business with handoffs, schedules, and moving parts</li>
+          <ul class="list">
+            <li>Run a local service business with moving parts and handoffs</li>
             <li>Feel execution is inconsistent or too dependent on the owner</li>
             <li>Want practical priorities, not a long report</li>
           </ul>
@@ -175,9 +184,35 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
       <div class="container footer">
-        <p class="small">© <span id="year"></span> CBA Digital • <a class="link" href="mailto:chuck@digitalcba.com">chuck@digitalcba.com</a></p>
+        <div class="footer-grid">
+          <div>
+            <strong class="text">CBA Digital</strong>
+            <p class="small muted">Business clarity for small local service businesses.</p>
+          </div>
+
+          <div>
+            <strong class="text">Contact</strong>
+            <p class="small muted">
+              <a href="mailto:chuck@digitalcba.com">chuck@digitalcba.com</a><br />
+              <span>Oregon City, Oregon</span>
+            </p>
+          </div>
+
+          <div>
+            <strong class="text">Links</strong>
+            <p class="small muted">
+              <a href="/#services">Services</a><br />
+              <a href="/#how-it-works">How it works</a><br />
+              <a href="/service/#contact">Request Snapshot</a>
+            </p>
+          </div>
+        </div>
+
+        <p class="small muted mt-2">
+          © <span id="year"></span> CBA Digital. All rights reserved.
+        </p>
       </div>
     </footer>
   </main>
