@@ -162,13 +162,22 @@ p { margin: 0; color: var(--muted); }
    5) Header / Nav
    ----------------------------- */
 .site-header {
-  position: sticky;
+  position: fixed;            /* was sticky */
   top: 0;
-  z-index: 50;
-  background: rgba(11, 18, 32, 0.72);
+  left: 0;
+  right: 0;
+  z-index: 1000;              /* higher than anything else */
+  background: rgba(11, 18, 32, 0.92);  /* more opaque */
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
+
+/* Ensure content doesn't sit under fixed header */
+body {
+  padding-top: 72px; /* adjust if your header height differs */
+}
+
 
 .nav {
   display: flex;
