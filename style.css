@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CBA Digital — Clean, single-source stylesheet
+   CBA Digital — Clean, single-source stylesheet (FULL REPLACEMENT)
    No frameworks. Minimal utilities. Shared by index.html + service pages.
    ========================================================================== */
 
@@ -44,6 +44,9 @@
   /* Motion */
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --dur: 140ms;
+
+  /* Header sizing (single source of truth) */
+  --header-height: 88px;
 }
 
 /* -----------------------------
@@ -54,6 +57,7 @@ html, body { height: 100%; }
 
 body {
   margin: 0;
+  padding-top: var(--header-height); /* fixed header offset */
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color: var(--text);
   background:
@@ -81,9 +85,15 @@ a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
   background: #ffffff;
   color: #000000;
   border-radius: 10px;
-  z-index: 1000;
+  z-index: 10000;
 }
 .skip-link:focus { left: 1rem; }
+
+/* Anchor offset for fixed header (prevents “header disappears” illusion) */
+section[id],
+[id][tabindex="-1"] {
+  scroll-margin-top: var(--header-height);
+}
 
 /* -----------------------------
    3) Layout
@@ -123,11 +133,13 @@ a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
    4) Typography
    ----------------------------- */
 h1, h2, h3 { margin: 0; }
+
 h1 {
   font-size: var(--h1);
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
+
 h2 {
   font-size: var(--h2);
   line-height: 1.15;
@@ -162,22 +174,16 @@ p { margin: 0; color: var(--muted); }
    5) Header / Nav
    ----------------------------- */
 .site-header {
-  position: fixed;            /* was sticky */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;              /* higher than anything else */
-  background: rgba(11, 18, 32, 0.92);  /* more opaque */
+  z-index: 1000;
+  background: rgba(11, 18, 32, 0.96);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
-
-/* Ensure content doesn't sit under fixed header */
-body {
-  padding-top: 72px; /* adjust if your header height differs */
-}
-
 
 .nav {
   display: flex;
@@ -211,6 +217,13 @@ body {
   .nav-links { display: flex; }
 }
 
+/* Header actions (Email + Primary CTA) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 /* -----------------------------
    6) Buttons
    ----------------------------- */
@@ -229,6 +242,7 @@ body {
   white-space: nowrap;
   transition: transform var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
+
 .btn:hover {
   transform: translateY(-1px);
   background: rgba(255,255,255,0.07);
@@ -293,14 +307,14 @@ body {
   background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
   box-shadow: var(--shadow);
 }
+
 .panel-title { font-size: 1.05rem; }
 
 /* -----------------------------
    9) Divider
    ----------------------------- */
-.bridge-divider {
-  padding: 0;
-}
+.bridge-divider { padding: 0; }
+
 .bridge-divider img {
   width: 100%;
   height: auto;
@@ -345,9 +359,20 @@ body {
   border-top: 1px solid var(--border);
   padding-top: 1.25rem;
 }
+
 .footer-grid a { color: var(--muted); }
 .footer-grid a:hover { color: var(--text); text-decoration: none; }
 
 @media (min-width: 720px) {
   .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+}
+
+/* -----------------------------
+   12) Small-screen header safety (optional but sensible)
+   Prevent header buttons from crowding on narrow viewports
+   ----------------------------- */
+@media (max-width: 420px) {
+  :root { --header-height: 96px; } /* gives breathing room if header wraps */
+  .nav { flex-wrap: wrap; }
+  .nav-actions { width: 100%; justify-content: flex-start; }
 }
