@@ -376,3 +376,27 @@ p { margin: 0; color: var(--muted); }
   .nav { flex-wrap: wrap; }
   .nav-actions { width: 100%; justify-content: flex-start; }
 }
+/* -----------------------------
+   Forms
+   ----------------------------- */
+input,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(52,199,147,0.6);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
