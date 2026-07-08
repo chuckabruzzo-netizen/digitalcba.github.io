@@ -1,39 +1,36 @@
-/* ==========================================================================
-   CBA Digital — Clean, single-source stylesheet (FULL REPLACEMENT)
-   No frameworks. Minimal utilities. Shared by index.html + service pages.
-   ========================================================================== */
+/* ============================================================================
+   CBA Digital brand stylesheet
+   Static site, no frameworks
+   ============================================================================ */
 
-/* -----------------------------
-   1) Tokens / Theme
-   ----------------------------- */
 :root {
-  /* Brand */
-  --primary: #34C793;
-  --secondary: #3378EF;
+  /* Brand palette */
+  --charcoal: #25292b;
+  --charcoal-2: #1a1d1e;
+  --charcoal-3: #33383a;
+  --cream: #f3eee3;
+  --cream-2: #e8dfcf;
+  --gold: #c7a55b;
+  --gold-2: #a98538;
+  --ink: #151718;
 
-  /* Surfaces (dark) */
-  --bg: #0b1220;
-  --surface: #0f1a30;
-  --card: rgba(16, 31, 58, 0.65);
+  /* Site tokens */
+  --bg: var(--charcoal);
+  --surface: rgba(243, 238, 227, 0.055);
+  --card: rgba(243, 238, 227, 0.075);
+  --text: var(--cream);
+  --muted: rgba(243, 238, 227, 0.72);
+  --border: rgba(243, 238, 227, 0.16);
+  --shadow: 0 18px 42px rgba(0, 0, 0, 0.32);
 
-  /* Text */
-  --text: #e9eefc;
-  --muted: #b9c4e6;
-
-  /* UI */
-  --border: rgba(255, 255, 255, 0.12);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-
-  /* Layout */
   --max: 1120px;
-  --radius: 18px;
+  --radius: 20px;
+  --header-height: 88px;
 
-  /* Type */
-  --h1: clamp(2rem, 4.2vw, 3.1rem);
-  --h2: clamp(1.45rem, 2.4vw, 2rem);
-  --lead: 1.05rem;
+  --h1: clamp(2.35rem, 5.2vw, 4.35rem);
+  --h2: clamp(1.6rem, 2.8vw, 2.35rem);
+  --lead: clamp(1.02rem, 1.35vw, 1.18rem);
 
-  /* Spacing */
   --s-1: 0.5rem;
   --s-2: 0.75rem;
   --s-3: 1rem;
@@ -41,74 +38,60 @@
   --s-5: 2rem;
   --s-6: 3rem;
 
-  /* Motion */
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --dur: 140ms;
-
-  /* Header sizing (single source of truth) */
-  --header-height: 88px;
+  --dur: 150ms;
 }
 
-/* -----------------------------
-   2) Base / A11y
-   ----------------------------- */
 * { box-sizing: border-box; }
-html, body { height: 100%; }
+html, body { min-height: 100%; }
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  padding-top: var(--header-height); /* fixed header offset */
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  padding-top: var(--header-height);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(1200px 600px at 10% 10%, rgba(51,120,239,0.25), transparent 60%),
-    radial-gradient(900px 500px at 90% 20%, rgba(52,199,147,0.20), transparent 55%),
-    var(--bg);
-  line-height: 1.5;
+    radial-gradient(900px 520px at 12% 0%, rgba(199, 165, 91, 0.16), transparent 58%),
+    radial-gradient(720px 460px at 90% 12%, rgba(243, 238, 227, 0.07), transparent 60%),
+    linear-gradient(180deg, var(--charcoal) 0%, var(--charcoal-2) 100%);
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
 }
 
 a { color: inherit; text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
 
 :focus-visible {
-  outline: 3px solid rgba(52,199,147,0.55);
+  outline: 3px solid rgba(199, 165, 91, 0.72);
   outline-offset: 3px;
   border-radius: 10px;
 }
 
-/* Skip link (visible only on keyboard focus) */
 .skip-link {
   position: absolute;
   left: -9999px;
   top: 1rem;
-  padding: 0.6rem 0.9rem;
-  background: #ffffff;
-  color: #000000;
-  border-radius: 10px;
+  padding: 0.65rem 0.95rem;
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 999px;
   z-index: 10000;
 }
 .skip-link:focus { left: 1rem; }
 
-/* Anchor offset for fixed header (prevents “header disappears” illusion) */
 section[id],
-[id][tabindex="-1"] {
-  scroll-margin-top: var(--header-height);
-}
+[id][tabindex="-1"] { scroll-margin-top: var(--header-height); }
 
-/* -----------------------------
-   3) Layout
-   ----------------------------- */
 .container {
   width: min(100% - 2rem, var(--max));
   margin-inline: auto;
 }
 
-.section { padding: 4.25rem 0; }
-@media (max-width: 719px) {
-  .section { padding: 3.25rem 0; }
-}
+.section { padding: 4.75rem 0; }
 
 .grid { display: grid; gap: 1rem; }
+
 @media (min-width: 720px) {
   .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
   .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
@@ -121,80 +104,89 @@ section[id],
   margin-top: var(--s-4);
 }
 
-/* Minimal utilities */
 .mt-1 { margin-top: var(--s-3); }
 .mt-2 { margin-top: var(--s-4); }
-
 .text { color: var(--text); }
 .muted { color: var(--muted); }
 .small { font-size: 0.92rem; }
 
-/* -----------------------------
-   4) Typography
-   ----------------------------- */
-h1, h2, h3 { margin: 0; }
+h1, h2, h3 { margin: 0; color: var(--text); }
 
 h1 {
+  max-width: 12ch;
   font-size: var(--h1);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  line-height: 0.96;
+  letter-spacing: -0.045em;
 }
 
 h2 {
   font-size: var(--h2);
-  line-height: 1.15;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: 1.08rem;
+  line-height: 1.2;
   letter-spacing: -0.01em;
 }
 
 p { margin: 0; color: var(--muted); }
-.lead { font-size: var(--lead); max-width: 62ch; }
+.lead { font-size: var(--lead); max-width: 64ch; }
 
 .eyebrow {
-  color: var(--muted);
+  color: var(--gold);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  font-size: 0.76rem;
+  font-weight: 800;
 }
 
 .section-head {
   display: grid;
-  gap: 0.5rem;
-  margin-bottom: var(--s-4);
+  gap: 0.6rem;
+  margin-bottom: var(--s-5);
+  max-width: 780px;
 }
 
 .list {
   margin: var(--s-3) 0 0;
-  padding-left: 1.1rem;
+  padding-left: 1.15rem;
   color: var(--muted);
   display: grid;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 
-/* -----------------------------
-   5) Header / Nav
-   ----------------------------- */
+.list li::marker { color: var(--gold); }
+
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(11, 18, 32, 0.96);
-  backdrop-filter: blur(10px);
+  background: rgba(37, 41, 43, 0.92);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
 }
 
 .nav {
+  min-height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--s-3);
-  padding: var(--s-3) 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
 }
 
 .brand-logo {
-  height: 32px;
+  height: 42px;
   width: auto;
   display: block;
 }
@@ -204,138 +196,162 @@ p { margin: 0; color: var(--muted); }
   margin: 0;
   padding: 0;
   display: none;
-  gap: 1.5rem;
+  gap: 1.7rem;
 }
 
 .nav-links a {
   color: var(--muted);
-  font-weight: 600;
-}
-.nav-links a:hover { color: var(--text); text-decoration: none; }
-
-@media (min-width: 720px) {
-  .nav-links { display: flex; }
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
-/* Header actions (Email + Primary CTA) */
+.nav-links a:hover {
+  color: var(--cream);
+  text-decoration: none;
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
 
-/* -----------------------------
-   6) Buttons
-   ----------------------------- */
+@media (min-width: 720px) {
+  .nav-links { display: flex; }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.72rem 0.98rem;
+  padding: 0.78rem 1.05rem;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.04);
-  color: var(--text);
-  font-weight: 750;
+  border: 1px solid rgba(243, 238, 227, 0.24);
+  background: rgba(243, 238, 227, 0.06);
+  color: var(--cream);
+  font-weight: 800;
   cursor: pointer;
   white-space: nowrap;
-  transition: transform var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  box-shadow: none;
+  transition: transform var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 
 .btn:hover {
   transform: translateY(-1px);
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(255,255,255,0.18);
+  background: rgba(243, 238, 227, 0.11);
+  border-color: rgba(243, 238, 227, 0.36);
   text-decoration: none;
 }
 
 .btn--primary {
-  border: 0;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #071021;
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--ink);
 }
-.btn--primary:hover { filter: brightness(1.05); }
 
-/* -----------------------------
-   7) Cards
-   ----------------------------- */
-.card {
-  background: var(--card);
+.btn--primary:hover {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--ink);
+}
+
+.card,
+.hero-panel {
+  background:
+    linear-gradient(180deg, rgba(243, 238, 227, 0.09), rgba(243, 238, 227, 0.045));
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 1.15rem;
+  padding: 1.25rem;
 }
 
-.card h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+.card h3,
+.hero-panel h2 { margin-bottom: 0.45rem; }
 .card p { font-size: 0.98rem; }
 
 .card--soft {
-  background: rgba(16, 31, 58, 0.50);
+  background: rgba(243, 238, 227, 0.06);
 }
 
 .card--featured {
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(16,31,58,0.55));
-  border-color: rgba(255,255,255,0.18);
+  background:
+    linear-gradient(180deg, rgba(199, 165, 91, 0.17), rgba(243, 238, 227, 0.055));
+  border-color: rgba(199, 165, 91, 0.48);
 }
 
 .card-actions { margin-top: var(--s-4); }
 
-/* -----------------------------
-   8) Hero
-   ----------------------------- */
-.hero { padding: 4.75rem 0 2.25rem; }
-@media (max-width: 719px) {
-  .hero { padding: 3.75rem 0 2rem; }
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 6.25rem 0 3rem;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 1.5rem auto auto 50%;
+  width: min(46vw, 560px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(199, 165, 91, 0.22);
+  border-radius: 50%;
+  transform: translateX(-5%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 9rem 8vw auto auto;
+  width: 180px;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(199, 165, 91, 0.28), transparent 66%);
+  filter: blur(2px);
+  pointer-events: none;
 }
 
 .hero-inner {
+  position: relative;
   display: grid;
   gap: var(--s-5);
   align-items: start;
 }
 
-@media (min-width: 720px) {
-  .hero-inner { grid-template-columns: 1.25fr 0.9fr; }
+.hero-content {
+  display: grid;
+  gap: 1.15rem;
 }
 
-.hero-panel {
-  padding: 1.15rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-  box-shadow: var(--shadow);
+@media (min-width: 720px) {
+  .hero-inner { grid-template-columns: 1.24fr 0.82fr; }
+  .hero-panel,
+  .hero-inner > .card { margin-top: 1.15rem; }
 }
 
 .panel-title { font-size: 1.05rem; }
 
-/* -----------------------------
-   9) Divider
-   ----------------------------- */
 .bridge-divider { padding: 0; }
 
 .bridge-divider img {
   width: 100%;
-  height: auto;
+  max-height: 260px;
+  object-fit: cover;
   display: block;
-  opacity: 0.9;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
+  opacity: 0.82;
+  border-radius: calc(var(--radius) + 8px);
+  border: 1px solid var(--border);
+  filter: grayscale(1) sepia(0.15) contrast(0.92) brightness(0.78) drop-shadow(0 18px 28px rgba(0, 0, 0, 0.34));
 }
 
-/* -----------------------------
-   10) CTA
-   ----------------------------- */
 .cta {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background:
-    radial-gradient(900px 500px at 20% 30%, rgba(52,199,147,0.14), transparent 60%),
-    radial-gradient(900px 500px at 80% 40%, rgba(51,120,239,0.14), transparent 60%);
-  padding: 4.25rem 0;
-}
-@media (max-width: 719px) {
-  .cta { padding: 3.25rem 0; }
+    linear-gradient(135deg, rgba(199, 165, 91, 0.16), transparent 45%),
+    rgba(243, 238, 227, 0.045);
+  padding: 4.75rem 0;
 }
 
 .cta-inner {
@@ -345,47 +361,35 @@ p { margin: 0; color: var(--muted); }
 }
 
 @media (min-width: 720px) {
-  .cta-inner { grid-template-columns: 1.3fr 0.9fr; align-items: center; }
+  .cta-inner { grid-template-columns: 1.25fr 0.85fr; align-items: center; }
 }
 
-/* -----------------------------
-   11) Footer
-   ----------------------------- */
-.site-footer { padding: 2.25rem 0; color: var(--muted); }
+.site-footer {
+  padding: 2.5rem 0;
+  color: var(--muted);
+}
 
 .footer-grid {
   display: grid;
   gap: 1rem;
   border-top: 1px solid var(--border);
-  padding-top: 1.25rem;
+  padding-top: 1.35rem;
 }
 
 .footer-grid a { color: var(--muted); }
-.footer-grid a:hover { color: var(--text); text-decoration: none; }
+.footer-grid a:hover { color: var(--cream); text-decoration: none; }
 
 @media (min-width: 720px) {
   .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
 }
 
-/* -----------------------------
-   12) Small-screen header safety (optional but sensible)
-   Prevent header buttons from crowding on narrow viewports
-   ----------------------------- */
-@media (max-width: 420px) {
-  :root { --header-height: 96px; } /* gives breathing room if header wraps */
-  .nav { flex-wrap: wrap; }
-  .nav-actions { width: 100%; justify-content: flex-start; }
-}
-/* -----------------------------
-   Forms
-   ----------------------------- */
 input,
 textarea {
   width: 100%;
-  padding: 0.6rem 0.7rem;
-  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  border-radius: 12px;
   border: 1px solid var(--border);
-  background: rgba(255,255,255,0.04);
+  background: rgba(243, 238, 227, 0.06);
   color: var(--text);
   font-family: inherit;
 }
@@ -393,10 +397,31 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: rgba(52,199,147,0.6);
+  border-color: rgba(199, 165, 91, 0.72);
 }
 
 label {
   display: block;
   margin-bottom: 0.25rem;
+  color: var(--cream);
+  font-weight: 700;
+}
+
+@media (max-width: 719px) {
+  :root { --header-height: 78px; }
+
+  body { background-color: var(--charcoal); }
+  .section { padding: 3.35rem 0; }
+  .hero { padding: 4.25rem 0 2.15rem; }
+  .hero::before { width: 78vw; inset: 2rem auto auto 42%; }
+  h1 { max-width: 11ch; }
+  .brand-logo { height: 34px; }
+  .site-header .btn { padding: 0.62rem 0.78rem; font-size: 0.86rem; }
+}
+
+@media (max-width: 420px) {
+  :root { --header-height: 96px; }
+  .nav { flex-wrap: wrap; padding: 0.7rem 0; }
+  .nav .btn { width: 100%; }
+  .actions .btn { width: 100%; }
 }
