@@ -252,6 +252,18 @@
     color: var(--paper);
   }
 
+  .identity{ display: grid; gap: 10px; }
+  .profile-link{ color: var(--paper-dim); font-size: 0.9rem; text-underline-offset: 4px; width: fit-content; }
+  .role-details{ margin-top: 8px; }
+  .role-details summary{ cursor: pointer; color: var(--paper-dim); font-size: 0.95rem; }
+  summary:focus-visible{ outline: 3px solid var(--paper); outline-offset: 5px; }
+  .credential-explainer{ margin-top: 20px; color: var(--paper-dim); font-size: 0.95rem; }
+  .credential-explainer summary{ cursor: pointer; }
+  .credential-explainer dl{ display: grid; grid-template-columns: 4rem 1fr; gap: 8px 12px; }
+  .credential-explainer dt{ font-weight: 600; }
+  .credential-explainer dd{ margin: 0; }
+  .footer-profile{ font-size: 0.95rem; text-underline-offset: 4px; }
+
   /* ---------- Footer ---------- */
 
   footer{
@@ -291,8 +303,8 @@
 
   <header class="hero">
     <div class="byline">
-      <span class="name">Chuck Abruzzo</span>
-      <span class="loc">Oregon City, Oregon</span>
+      <div class="identity"><span class="name">Chuck Abruzzo</span><a class="profile-link" href="https://www.linkedin.com/in/chuckabruzzo">View LinkedIn profile</a></div>
+      <span class="loc">Oregon City, Oregon · Pacific Time</span>
     </div>
 
     <h1>Twenty years inside insurance operations and systems.</h1>
@@ -362,7 +374,7 @@
           <div class="org">AZAD Technology Partners</div>
           <div class="role-title">Business Systems Analyst</div>
           <div class="clients">Client: Bonneville Power Administration</div>
-          <p class="role-summary">Requirements, process analysis, and implementation readiness for infrastructure and operational technology modernization.</p>
+          <details class="role-details"><summary>Infrastructure &amp; operational technology modernization</summary><p class="role-summary">Requirements, process analysis, and implementation readiness for infrastructure and operational technology modernization.</p></details>
         </div>
       </div>
       <div class="tl-row">
@@ -371,7 +383,7 @@
           <div class="org">Sogeti</div>
           <div class="role-title">Senior Manager / Program Manager</div>
           <div class="clients">Clients: Liberty Mutual, Western Alliance Bank</div>
-          <p class="role-summary">Led modernization and platform migration workstreams, coordinating dependencies, testing, deployment readiness, and operational transitions.</p>
+          <details class="role-details"><summary>Platform migration &amp; delivery coordination</summary><p class="role-summary">Led modernization and platform migration workstreams, coordinating dependencies, testing, deployment readiness, and operational transitions.</p></details>
         </div>
       </div>
       <div class="tl-row">
@@ -380,7 +392,7 @@
           <div class="org">Cognizant Technology Solutions</div>
           <div class="role-title">Senior Consultant</div>
           <div class="clients">Clients: FM Global, Aflac</div>
-          <p class="role-summary">Defined requirements for enterprise content and customer communications; supported Documentum cloud migration and insurance platform business architecture.</p>
+          <details class="role-details"><summary>Content migration &amp; insurance business architecture</summary><p class="role-summary">Defined requirements for enterprise content and customer communications; supported Documentum cloud migration and insurance platform business architecture.</p></details>
         </div>
       </div>
       <div class="tl-row">
@@ -389,7 +401,7 @@
           <div class="org">Cambia Health Solutions</div>
           <div class="role-title">Senior Business Systems Analyst</div>
           <div class="clients">Portland, Oregon</div>
-          <p class="role-summary">Led requirements and testing support for customer communications, including data flows from Facets to portals, print/mail, and archives.</p>
+          <details class="role-details"><summary>Customer communications &amp; Facets data flows</summary><p class="role-summary">Led requirements and testing support for customer communications, including data flows from Facets to portals, print/mail, and archives.</p></details>
         </div>
       </div>
       <div class="tl-row">
@@ -398,7 +410,7 @@
           <div class="org">LifeMap Assurance Company</div>
           <div class="role-title">Business Analyst</div>
           <div class="clients">Portland, Oregon</div>
-          <p class="role-summary">Led business analysis for Thunderhead One modernization, covering templates, communication workflows, output channels, and source-system integration.</p>
+          <details class="role-details"><summary>Thunderhead One modernization</summary><p class="role-summary">Led business analysis for Thunderhead One modernization, covering templates, communication workflows, output channels, and source-system integration.</p></details>
         </div>
       </div>
       <div class="tl-row">
@@ -407,7 +419,7 @@
           <div class="org">LifeMap Assurance Company / Regence Life and Health</div>
           <div class="role-title">Senior Life and Disability Analyst</div>
           <div class="clients">Portland, Oregon</div>
-          <p class="role-summary">Managed complex life and disability casework and contributed claims and policy administration expertise to early modernization work.</p>
+          <details class="role-details"><summary>Life &amp; disability operations</summary><p class="role-summary">Managed complex life and disability casework and contributed claims and policy administration expertise to early modernization work.</p></details>
         </div>
       </div>
       <div class="tl-row">
@@ -416,7 +428,7 @@
           <div class="org">Standard Insurance Company</div>
           <div class="role-title">Senior Disability Benefits Analyst</div>
           <div class="clients">Portland, Oregon</div>
-          <p class="role-summary">Managed complex disability benefits casework, customer workflows, documentation, and issue resolution in regulated insurance operations.</p>
+          <details class="role-details"><summary>Disability benefits &amp; claims operations</summary><p class="role-summary">Managed complex disability benefits casework, customer workflows, documentation, and issue resolution in regulated insurance operations.</p></details>
         </div>
       </div>
     </div>
@@ -469,6 +481,15 @@
         <span class="chip">ARA</span>
       </div>
     </div>
+    <details class="credential-explainer">
+      <summary>What the LOMA credentials mean</summary>
+      <dl>
+        <dt>FLMI</dt><dd>Fellow, Life Management Institute</dd>
+        <dt>ACS</dt><dd>Associate, Customer Service</dd>
+        <dt>AIRC</dt><dd>Associate, Insurance Regulatory Compliance</dd>
+        <dt>ARA</dt><dd>Associate, Reinsurance Administration</dd>
+      </dl>
+    </details>
   </section>
 
   <hr class="rule">
@@ -484,7 +505,8 @@
 
   <footer>
     <a class="email" href="mailto:chuck@digitalcba.com">chuck@digitalcba.com</a>
-    <div class="meta">Oregon City, Oregon — CBA Digital</div>
+    <p class="footer-profile"><a href="https://www.linkedin.com/in/chuckabruzzo">Connect on LinkedIn</a></p>
+    <div class="meta">Oregon City, Oregon · Pacific Time — CBA Digital</div>
   </footer>
 
 </div>
