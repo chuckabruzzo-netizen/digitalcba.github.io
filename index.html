@@ -63,9 +63,11 @@
   }
 
   .byline .name{
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.02em;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
     color: var(--brass);
   }
 
@@ -205,6 +207,11 @@
     gap: 10px;
   }
 
+  .credential-rows{
+    display: grid;
+    gap: 14px;
+  }
+
   .chip{
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12.5px;
@@ -275,13 +282,8 @@
     <p class="section-label">What I can speak to</p>
 
     <div class="coverage-item">
-      <h3>Insurance & payer operations</h3>
-      <p>Claims handling, policy administration, and disability and life insurance casework inside regulated carriers.</p>
-    </div>
-
-    <div class="coverage-item">
-      <h3>Customer communications & document platforms</h3>
-      <p>Thunderhead, Smart Communications, and Documentum — template design, print and mail, portal delivery, and archive.</p>
+      <h3>Enterprise requirements & delivery</h3>
+      <p>Business analysis, stakeholder alignment, and Agile or hybrid delivery inside regulated operating environments.</p>
     </div>
 
     <div class="coverage-item">
@@ -290,8 +292,13 @@
     </div>
 
     <div class="coverage-item">
-      <h3>Enterprise requirements & delivery</h3>
-      <p>Business analysis, stakeholder alignment, and Agile or hybrid delivery inside regulated operating environments.</p>
+      <h3>Customer communications & document platforms</h3>
+      <p>Thunderhead, Smart Communications, and Documentum — template design, print and mail, portal delivery, and archive.</p>
+    </div>
+
+    <div class="coverage-item">
+      <h3>Insurance & payer operations</h3>
+      <p>Claims handling, policy administration, and disability and life insurance casework inside regulated carriers.</p>
     </div>
   </section>
 
@@ -391,14 +398,20 @@
 
   <section id="credentials">
     <p class="section-label">Credentials</p>
-    <div class="chips">
-      <span class="chip">FLMI</span>
-      <span class="chip">ACS</span>
-      <span class="chip">AIRC</span>
-      <span class="chip">ARA</span>
-      <span class="chip">SAFe 5 Product Owner / Product Manager</span>
-      <span class="chip">SAFe 5 Scrum Master</span>
-      <span class="chip">B.A. Communication, University of Arizona</span>
+    <div class="credential-rows">
+      <div class="chips" role="group" aria-label="SAFe credentials">
+        <span class="chip">SAFe 5 Product Owner / Product Manager</span>
+        <span class="chip">SAFe 5 Scrum Master</span>
+      </div>
+      <div class="chips" role="group" aria-label="Education">
+        <span class="chip">B.A. Communication, University of Arizona</span>
+      </div>
+      <div class="chips" role="group" aria-label="LOMA certifications">
+        <span class="chip">FLMI</span>
+        <span class="chip">ACS</span>
+        <span class="chip">AIRC</span>
+        <span class="chip">ARA</span>
+      </div>
     </div>
   </section>
 
