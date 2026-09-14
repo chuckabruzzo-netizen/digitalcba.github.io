@@ -1,196 +1,380 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="CBA Digital provides enterprise advisory, business systems analysis, technology modernization, and strategic execution support for complex operational change." />
-  <title>CBA Digital | Enterprise advisory for complex change</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chuck Abruzzo — Insurance operations & systems modernization</title>
+<meta name="description" content="Chuck Abruzzo. Twenty years in insurance and payer operations, customer communications platforms, and systems modernization. Available for expert-network consultations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #131F2C;
+    --ink-2: #1A2A3A;
+    --paper: #EAE3D2;
+    --paper-dim: #A9AC9C;
+    --brass: #C79A4E;
+    --slate: #6E8299;
+    --rule: rgba(234,227,210,0.14);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  .rule{
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 0;
+  }
+
+  /* ---------- Header / Hero ---------- */
+
+  header.hero{
+    padding: 72px 0 56px;
+  }
+
+  .byline{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .byline .name{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--brass);
+  }
+
+  .byline .loc{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--slate);
+  }
+
+  h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    line-height: 1.18;
+    margin: 0 0 22px;
+    max-width: 15ch;
+    opacity: 0;
+    animation: rise 0.7s ease-out forwards;
+  }
+
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(10px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  .lede{
+    font-size: 1.08rem;
+    color: var(--paper-dim);
+    max-width: 46ch;
+    margin: 0 0 32px;
+  }
+
+  .cta{
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--brass);
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+
+  .cta:hover{ background: #d6ab63; }
+
+  /* ---------- Section shell ---------- */
+
+  section{
+    padding: 52px 0;
+  }
+
+  .section-label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--slate);
+    margin: 0 0 28px;
+  }
+
+  /* ---------- Coverage areas ---------- */
+
+  .coverage-item{
+    border-left: 2px solid var(--rule);
+    padding: 4px 0 4px 22px;
+    margin-bottom: 30px;
+  }
+
+  .coverage-item:last-child{ margin-bottom: 0; }
+
+  .coverage-item h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0 0 8px;
+    color: var(--paper);
+  }
+
+  .coverage-item p{
+    margin: 0;
+    color: var(--paper-dim);
+    font-size: 0.98rem;
+    max-width: 52ch;
+  }
+
+  /* ---------- Timeline ---------- */
+
+  .timeline{
+    position: relative;
+    padding-left: 22px;
+    border-left: 2px solid var(--rule);
+  }
+
+  .tl-row{
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    gap: 18px;
+    margin-bottom: 26px;
+  }
+
+  .tl-row:last-child{ margin-bottom: 0; }
+
+  .tl-date{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--brass);
+    padding-top: 2px;
+  }
+
+  .tl-role .org{
+    font-weight: 600;
+    color: var(--paper);
+  }
+
+  .tl-role .clients{
+    color: var(--slate);
+    font-size: 0.92rem;
+    margin-top: 2px;
+  }
+
+  /* ---------- Chips (platforms / credentials) ---------- */
+
+  .chips{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .chip{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--paper-dim);
+    border: 1px solid var(--rule);
+    padding: 7px 12px;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .chip:hover{
+    border-color: var(--brass);
+    color: var(--paper);
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer{
+    padding: 52px 0 72px;
+  }
+
+  footer .email{
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--brass);
+  }
+
+  footer .meta{
+    margin-top: 18px;
+    color: var(--slate);
+    font-size: 0.9rem;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  @media (max-width: 520px){
+    header.hero{ padding: 52px 0 40px; }
+    .tl-row{ grid-template-columns: 84px 1fr; gap: 12px; }
+    .tl-date{ font-size: 12px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    h1{ animation: none; opacity: 1; }
+    html{ scroll-behavior: auto; }
+  }
+</style>
 </head>
-
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
 
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="/" aria-label="CBA Digital home">
-        <img src="/assets/cba-digital-logo.svg" alt="CBA Digital" class="brand-logo" />
-      </a>
+<div class="wrap">
 
-      <nav aria-label="Main navigation">
-        <ul class="nav-links">
-          <li><a href="#work">Work</a></li>
-          <li><a href="#capabilities">Capabilities</a></li>
-          <li><a href="#approach">Approach</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <a class="btn btn--primary" href="mailto:chuck@digitalcba.com?subject=CBA%20Digital%20Inquiry">Start a conversation</a>
+  <header class="hero">
+    <div class="byline">
+      <span class="name">Chuck Abruzzo</span>
+      <span class="loc">Oregon City, Oregon</span>
     </div>
+
+    <h1>Twenty years inside how insurance companies run their operations, their systems, and the documents in between.</h1>
+
+    <p class="lede">Business systems analysis, payer operations, and customer communications platform modernization, drawn from two decades inside regulated carriers. Available for paid expert-network consultations.</p>
+
+    <a class="cta" href="mailto:chuck@digitalcba.com?subject=Expert%20consultation%20inquiry">Email Chuck</a>
   </header>
 
-  <main id="main">
-    <section class="hero hero--editorial">
-      <div class="container hero-grid">
-        <div class="hero-kicker">Strategy. Technology. Growth.</div>
-        <h1>Turning complexity into clarity.</h1>
-        <div class="hero-copy">
-          <p class="lead">
-            CBA Digital helps leaders make better decisions about technology, operations, and change.
-          </p>
-          <p>
-            We work where business strategy, systems thinking, modernization, and execution overlap. The output is not theater. It is clearer choices, cleaner operating models, and practical movement through complex work.
-          </p>
-          <div class="actions">
-            <a class="btn btn--primary" href="mailto:chuck@digitalcba.com?subject=CBA%20Digital%20Inquiry">Work with CBA Digital</a>
-            <a class="btn" href="#capabilities">View capabilities</a>
-          </div>
+  <hr class="rule">
+
+  <section id="coverage">
+    <p class="section-label">What I can speak to</p>
+
+    <div class="coverage-item">
+      <h3>Insurance & payer operations</h3>
+      <p>Claims handling, policy administration, and disability and life insurance casework inside regulated carriers.</p>
+    </div>
+
+    <div class="coverage-item">
+      <h3>Customer communications & document platforms</h3>
+      <p>Thunderhead, Smart Communications, and Documentum — template design, print and mail, portal delivery, and archive.</p>
+    </div>
+
+    <div class="coverage-item">
+      <h3>Systems modernization & vendor migration</h3>
+      <p>Legacy-to-cloud content platform migration, vendor evaluation, and implementation and go-live readiness.</p>
+    </div>
+
+    <div class="coverage-item">
+      <h3>Enterprise requirements & delivery</h3>
+      <p>Business analysis, stakeholder alignment, and Agile or hybrid delivery inside regulated operating environments.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="background">
+    <p class="section-label">Background</p>
+
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-date">2025—</div>
+        <div class="tl-role">
+          <div class="org">AZAD Technology Partners</div>
+          <div class="clients">Bonneville Power Administration</div>
         </div>
       </div>
-    </section>
-
-    <section id="work" class="statement-section">
-      <div class="container statement-grid">
-        <p class="eyebrow">Where we work</p>
-        <p class="statement">
-          Enterprise modernization, business architecture, process improvement, AI enablement, and decision support for organizations navigating operational change.
-        </p>
-      </div>
-    </section>
-
-    <section id="capabilities" class="section section--quiet">
-      <div class="container">
-        <div class="section-head section-head--wide">
-          <span class="eyebrow">Capabilities</span>
-          <h2>For problems that cross lanes.</h2>
-          <p class="lead">
-            The valuable work often lives between departments, systems, vendors, and decision makers. CBA Digital helps make that middle visible, navigable, and executable.
-          </p>
-        </div>
-
-        <div class="capability-list">
-          <article class="capability">
-            <span>01</span>
-            <h3>Enterprise analysis</h3>
-            <p>Current state discovery, future state definition, requirements, stakeholder alignment, decision briefs, and operating model clarity.</p>
-          </article>
-
-          <article class="capability">
-            <span>02</span>
-            <h3>Technology modernization</h3>
-            <p>Platform strategy, vendor evaluation, roadmap development, modernization planning, and translation between business outcomes and technical constraints.</p>
-          </article>
-
-          <article class="capability">
-            <span>03</span>
-            <h3>Operational excellence</h3>
-            <p>Workflow improvement, governance, role clarity, handoff cleanup, execution rhythms, and practical systems that reduce recurring friction.</p>
-          </article>
-
-          <article class="capability">
-            <span>04</span>
-            <h3>AI and automation enablement</h3>
-            <p>Use case identification, lightweight automation design, prompt workflows, digital assistants, and guardrails that keep experimentation useful.</p>
-          </article>
-
-          <article class="capability">
-            <span>05</span>
-            <h3>Strategic advisory</h3>
-            <p>Fractional support for leaders who need clear thinking, structured options, and decision-ready material before committing people, budget, or time.</p>
-          </article>
-
-          <article class="capability capability--featured">
-            <span>06</span>
-            <h3>Business Snapshot</h3>
-            <p>A focused assessment for teams that need a fast, grounded view of what is happening, what matters, and what to fix first.</p>
-            <a href="/service/">View the Snapshot</a>
-          </article>
+      <div class="tl-row">
+        <div class="tl-date">2022—2024</div>
+        <div class="tl-role">
+          <div class="org">Sogeti</div>
+          <div class="clients">Liberty Mutual, Western Alliance Bank</div>
         </div>
       </div>
-    </section>
-
-    <section id="approach" class="section section--cream">
-      <div class="container approach-grid">
-        <div>
-          <span class="eyebrow">Approach</span>
-          <h2>Slow the first move. Speed up the work.</h2>
-        </div>
-        <div class="approach-copy">
-          <p class="lead">
-            Most change efforts move too quickly into tools, meetings, and noise. CBA Digital starts by naming the problem cleanly, then designing the smallest practical system that can carry the work forward.
-          </p>
+      <div class="tl-row">
+        <div class="tl-date">2019—2022</div>
+        <div class="tl-role">
+          <div class="org">Cognizant Technology Solutions</div>
+          <div class="clients">FM Global, Aflac</div>
         </div>
       </div>
-
-      <div class="container word-row" aria-label="CBA Digital approach sequence">
-        <div>
-          <strong>Understand</strong>
-          <p>Surface the real current state.</p>
-        </div>
-        <div>
-          <strong>Align</strong>
-          <p>Get the people and priorities pointed at the same problem.</p>
-        </div>
-        <div>
-          <strong>Deliver</strong>
-          <p>Turn decisions into working changes.</p>
+      <div class="tl-row">
+        <div class="tl-date">2016—2019</div>
+        <div class="tl-role">
+          <div class="org">Cambia Health Solutions</div>
+          <div class="clients">Portland, Oregon</div>
         </div>
       </div>
-    </section>
-
-    <section class="section philosophy-section">
-      <div class="container philosophy-grid">
-        <div class="mark-panel" aria-hidden="true">
-          <img src="/assets/cba-digital-icon.svg" alt="" />
-        </div>
-        <div>
-          <span class="eyebrow">Point of view</span>
-          <h2>Clarity is an operating asset.</h2>
-          <p class="lead">
-            Good strategy is not just a sharper slide. It changes what people notice, how they decide, and what work becomes possible. CBA Digital exists to make complex change more legible and more executable.
-          </p>
+      <div class="tl-row">
+        <div class="tl-date">2013—2016</div>
+        <div class="tl-role">
+          <div class="org">LifeMap Assurance Company</div>
+          <div class="clients">Portland, Oregon</div>
         </div>
       </div>
-    </section>
-
-    <section class="cta" id="contact">
-      <div class="container cta-inner">
-        <div>
-          <span class="eyebrow">Next step</span>
-          <h2>Bring the complicated thing.</h2>
-          <p class="lead">
-            Send the messy version. What is changing, what is stuck, what decision needs shape, or what system no longer fits the work.
-          </p>
-        </div>
-        <div>
-          <a class="btn btn--primary btn--large" href="mailto:chuck@digitalcba.com?subject=CBA%20Digital%20Inquiry&body=Hi%20Chuck%2C%0A%0AI%27d%20like%20to%20talk%20about%20a%20business%2C%20technology%2C%20or%20operational%20change%20problem.%0A%0AWhat%27s%20going%20on%3A%0AWhat%27s%20stuck%3A%0AWhat%20decision%20needs%20shape%3A%0A%0AThanks%2C">Email Chuck</a>
-          <p class="small muted mt-1">Oregon City, Oregon • chuck@digitalcba.com</p>
+      <div class="tl-row">
+        <div class="tl-date">1998—2013</div>
+        <div class="tl-role">
+          <div class="org">Standard Insurance / Regence Life and Health</div>
+          <div class="clients">Portland, Oregon</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <img src="/assets/cba-digital-logo.svg" alt="CBA Digital" class="footer-logo" />
-          <p class="small muted">Enterprise advisory for complex operational change.</p>
-        </div>
-        <div>
-          <strong>Contact</strong>
-          <p class="small muted"><a href="mailto:chuck@digitalcba.com">chuck@digitalcba.com</a><br />Oregon City, Oregon</p>
-        </div>
-        <div>
-          <strong>Links</strong>
-          <p class="small muted"><a href="/service/">Business Snapshot</a><br /><a href="#capabilities">Capabilities</a><br /><a href="#approach">Approach</a></p>
-        </div>
-      </div>
-      <div class="container copyright small muted">© <span id="year"></span> CBA Digital. All rights reserved.</div>
-    </footer>
-  </main>
+  <hr class="rule">
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <section id="platforms">
+    <p class="section-label">Systems & platforms</p>
+    <div class="chips">
+      <span class="chip">Guidewire EIS</span>
+      <span class="chip">Documentum</span>
+      <span class="chip">Thunderhead</span>
+      <span class="chip">Smart Communications</span>
+      <span class="chip">Facets</span>
+      <span class="chip">Informatica</span>
+      <span class="chip">Jira</span>
+      <span class="chip">Confluence</span>
+      <span class="chip">Azure DevOps</span>
+      <span class="chip">Visio</span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="credentials">
+    <p class="section-label">Credentials</p>
+    <div class="chips">
+      <span class="chip">FLMI</span>
+      <span class="chip">ACS</span>
+      <span class="chip">AIRC</span>
+      <span class="chip">ARA</span>
+      <span class="chip">SAFe 5 Product Owner / Product Manager</span>
+      <span class="chip">SAFe 5 Scrum Master</span>
+      <span class="chip">B.A. Communication, University of Arizona</span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <footer>
+    <a class="email" href="mailto:chuck@digitalcba.com?subject=Expert%20consultation%20inquiry">chuck@digitalcba.com</a>
+    <div class="meta">Oregon City, Oregon — CBA Digital</div>
+  </footer>
+
+</div>
+
 </body>
 </html>
