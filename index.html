@@ -4,7 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chuck Abruzzo — Insurance operations & systems modernization</title>
-<meta name="description" content="Chuck Abruzzo. Twenty years in insurance and payer operations, customer communications platforms, and systems modernization. Available for expert-network consultations.">
+<meta name="description" content="Paid expert-network consultations with Chuck Abruzzo: 20+ years in insurance operations, business systems analysis, customer communications, and modernization.">
+<link rel="canonical" href="https://digitalcba.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://digitalcba.com/">
+<meta property="og:site_name" content="Chuck Abruzzo | CBA Digital">
+<meta property="og:title" content="Chuck Abruzzo — Insurance operations &amp; systems modernization">
+<meta property="og:description" content="20+ years in insurance operations and systems. Available for paid expert-network consultations on customer communications, requirements, and modernization.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chuck Abruzzo — Insurance operations &amp; systems modernization">
+<meta name="twitter:description" content="Paid expert-network consultations on insurance operations, customer communications platforms, business systems analysis, and modernization.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,7 +25,7 @@
     --paper: #EAE3D2;
     --paper-dim: #A9AC9C;
     --brass: #C79A4E;
-    --slate: #6E8299;
+    --slate: #93A3B5;
     --rule: rgba(234,227,210,0.14);
   }
 
@@ -34,6 +44,17 @@
   }
 
   a{ color: inherit; }
+  a:focus-visible{ outline: 3px solid var(--paper); outline-offset: 5px; }
+  .skip-link{ position: absolute; left: 16px; top: -100px; padding: 12px; background: var(--ink); z-index: 1; }
+  .skip-link:focus{ top: 12px; }
+  .page-nav{ display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 24px; font-size: 0.875rem; color: var(--paper-dim); }
+  .page-nav a{ padding: 8px 0; text-underline-offset: 4px; }
+  .inquiry-note{ color: var(--paper-dim); font-size: 0.95rem; max-width: 52ch; margin: 20px 0 0; }
+  .topics{ padding-left: 22px; margin: 0; color: var(--paper-dim); }
+  .topics li{ margin-bottom: 14px; }
+  .section-label{ font-weight: 500; }
+  .chip, .tl-role{ min-width: 0; overflow-wrap: anywhere; }
+  footer .email{ overflow-wrap: anywhere; }
 
   .wrap{
     max-width: 760px;
@@ -85,7 +106,6 @@
     line-height: 1.18;
     margin: 0 0 22px;
     max-width: 25ch;
-    opacity: 0;
     animation: rise 0.7s ease-out forwards;
   }
 
@@ -122,7 +142,7 @@
 
   .section-label{
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--slate);
     margin: 0 0 28px;
   }
@@ -214,7 +234,7 @@
 
   .chip{
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 12.5px;
+    font-size: 14px;
     color: var(--paper-dim);
     border: 1px solid var(--rule);
     padding: 7px 12px;
@@ -249,8 +269,8 @@
 
   @media (max-width: 520px){
     header.hero{ padding: 52px 0 40px; }
-    .tl-row{ grid-template-columns: 84px 1fr; gap: 12px; }
-    .tl-date{ font-size: 12px; }
+    .tl-row{ grid-template-columns: 1fr; gap: 4px; }
+    .tl-date{ font-size: 14px; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -260,6 +280,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="wrap">
 
@@ -271,15 +292,22 @@
 
     <h1>Twenty years inside insurance operations and systems.</h1>
 
-    <p class="lede">Practical experience in payer operations, business systems analysis, and the platforms that create and deliver customer documents. Available for paid expert-network consultations.</p>
+    <p class="lede">Practical experience in insurance operations, business systems analysis, and the platforms that create and deliver customer documents. Available for paid expert-network consultations.</p>
 
-    <a class="cta" href="mailto:chuck@digitalcba.com?subject=Expert%20consultation%20inquiry">Email Chuck</a>
+    <a class="cta" href="mailto:chuck@digitalcba.com?subject=Expert%20consultation%20inquiry">Discuss a paid consultation</a>
+    <p class="inquiry-note">For expert-network research teams: email your network or organization, proposed topic, key questions, and timing so I can assess fit.</p>
+    <nav class="page-nav" aria-label="Page sections">
+      <a href="#topics">Consultation topics</a>
+      <a href="#background">Background</a>
+      <a href="#advisory">CBA Digital advisory</a>
+    </nav>
   </header>
 
+  <main id="main" tabindex="-1">
   <hr class="rule">
 
   <section id="coverage">
-    <p class="section-label">What I can speak to</p>
+    <h2 class="section-label">Areas of expertise</h2>
 
     <div class="coverage-item">
       <h3>Enterprise requirements & delivery</h3>
@@ -297,15 +325,29 @@
     </div>
 
     <div class="coverage-item">
-      <h3>Insurance & payer operations</h3>
+      <h3>Insurance operations</h3>
       <p>Claims handling, policy administration, and disability and life insurance casework inside regulated carriers.</p>
     </div>
   </section>
 
   <hr class="rule">
 
+  <section id="topics">
+    <h2 class="section-label">Typical consultation topics</h2>
+    <ul class="topics">
+      <li>How customer communications move from source systems through templates to print, mail, portals, and archives.</li>
+      <li>Requirements and operational dependencies in Thunderhead, Smart Communications, and Documentum modernization.</li>
+      <li>Vendor migration readiness: testing, cutover planning, and the transition into day-to-day operations.</li>
+      <li>How claims and policy administration workflows shape insurance systems requirements.</li>
+    </ul>
+    <p class="inquiry-note">Discussions draw on professional experience and general industry practices, within confidentiality obligations.</p>
+    <p><a href="mailto:chuck@digitalcba.com?subject=Expert%20consultation%20inquiry">Email Chuck about your research topic</a></p>
+  </section>
+
+  <hr class="rule">
+
   <section id="background">
-    <p class="section-label">Background</p>
+    <h2 class="section-label">Background</h2>
     <p class="lede">Experience spanning insurance casework, business systems analysis, and customer communications modernization.</p>
 
     <div class="timeline">
@@ -378,7 +420,7 @@
   <hr class="rule">
 
   <section id="platforms">
-    <p class="section-label">Systems & platforms</p>
+    <h2 class="section-label">Systems & platforms</h2>
     <div class="chips">
       <span class="chip">Guidewire</span>
       <span class="chip">EIS</span>
@@ -397,7 +439,7 @@
   <hr class="rule">
 
   <section id="credentials">
-    <p class="section-label">Credentials</p>
+    <h2 class="section-label">Credentials</h2>
     <div class="credential-rows">
       <div class="chips" role="group" aria-label="SAFe credentials">
         <span class="chip">SAFe 5 Product Owner / Product Manager</span>
@@ -417,9 +459,17 @@
 
   <hr class="rule">
 
+  <section id="advisory">
+    <h2 class="section-label">Broader advisory work through CBA Digital</h2>
+    <p class="lede">Expert-network consultations are focused conversations about a research topic. For broader advisory work, I work through CBA Digital to help organizations clarify requirements, plan systems modernization, and improve operations.</p>
+    <a href="mailto:chuck@digitalcba.com?subject=CBA%20Digital%20advisory%20inquiry">Discuss an advisory project</a>
+  </section>
+  </main>
+
+  <hr class="rule">
+
   <footer>
-    <p class="lede">For broader advisory work, CBA Digital helps organizations clarify requirements, plan systems modernization, and improve operations.</p>
-    <a class="email" href="mailto:chuck@digitalcba.com?subject=Expert%20consultation%20inquiry">chuck@digitalcba.com</a>
+    <a class="email" href="mailto:chuck@digitalcba.com">chuck@digitalcba.com</a>
     <div class="meta">Oregon City, Oregon — CBA Digital</div>
   </footer>
 
